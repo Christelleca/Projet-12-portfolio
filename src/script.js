@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
             text.classList.toggle("visible", index === currentIndex);
         });
         currentIndex = (currentIndex + 1) % logoTexts.length;
-    }, 8000);
+    }, 10000);
 
     // Mode nuit et jour
     themeToggle.addEventListener("click", function () {
@@ -27,7 +27,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Animation de scroll vers les compétences
+    // Smooth scroll to sections
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+                behavior: "smooth",
+            });
+        });
+    });
+
+    // Scroll down button
     document
         .querySelector(".scroll_down")
         .addEventListener("click", function () {
