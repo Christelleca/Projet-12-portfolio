@@ -22,7 +22,8 @@
         />
         <link rel="stylesheet" href="src/index.css" />
     </head>
-    <body>
+    <body class="dark-theme">
+        <!-- Mode sombre activé par défaut -->
         <header>
             <div class="header_navbar">
                 <div class="logo_animation">
@@ -41,13 +42,22 @@
                     </ul>
                 </nav>
                 <button id="theme-toggle" class="theme-toggle">
-                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <!-- Icône du mode jour -->
                 </button>
                 <button class="menu_toggle">☰</button>
             </div>
         </header>
         <main>
             <section id="home" class="home_presentation">
+                <div class="portrait animate__animated animate__fadeInLeft">
+                    <div class="photo_wrapper">
+                        <img
+                            src="src/images/portrait.jpg"
+                            alt="photo de Christelle"
+                        />
+                    </div>
+                </div>
                 <div class="welcome_animation">
                     <h1>Bienvenue sur mon portfolio</h1>
                     <p>
@@ -103,147 +113,171 @@
             <section id="projects" class="projets" data-aos="fade-up">
                 <h2>Mes projets</h2>
                 <div class="container_projets">
-                    <div class="container_img_projets">
+                    <div
+                        class="container_img_projets"
+                        data-description="Description du projet oh my food..."
+                        data-images="src/images/photo_p4/photo_1_p4.png,src/images/photo_p4/photo_2_p4.png,src/images/photo_p4/photo_3_p4.png"
+                    >
                         <img
-                            src="src/images/photo projet/projet_2.png"
-                            alt="capture du projet ridding citties"
-                        />
-                        <div class="project_details">
-                            <h3>Projet Ridding Citties</h3>
-                            <p>Technologies: HTML, CSS</p>
-                            <div class="project_links">
-                                <a href="#" class="project_link">
-                                    <i class="fa-solid fa-link"></i> Site
-                                </a>
-                                <a href="#" class="project_link">
-                                    <i class="fa-brands fa-github"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container_img_projets">
-                        <img
-                            src="src/images/photo projet/projet_3.png"
-                            alt="capture du projet booki"
-                        />
-                        <div class="project_details">
-                            <h3>Projet Booki</h3>
-                            <p>Technologies: HTML, CSS</p>
-                            <div class="project_links">
-                                <a href="#" class="project_link">
-                                    <i class="fa-solid fa-link"></i> Site
-                                </a>
-                                <a href="#" class="project_link">
-                                    <i class="fa-brands fa-github"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container_img_projets">
-                        <img
-                            src="src/images/photo projet/projet_4.png"
+                            src="src/images/card_projet/projet_4.png"
                             alt="capture du projet oh my food"
                         />
                         <div class="project_details">
                             <h3>Projet Oh My Food</h3>
                             <p>Technologies: HTML, Sass</p>
                             <div class="project_links">
-                                <a href="#" class="project_link">
-                                    <i class="fa-solid fa-link"></i> Site
-                                </a>
-                                <a href="#" class="project_link">
-                                    <i class="fa-brands fa-github"></i> GitHub
-                                </a>
+                                <a href="#" class="project_link"
+                                    ><i class="fa-solid fa-link"></i> Site</a
+                                >
+                                <a href="#" class="project_link"
+                                    ><i class="fa-brands fa-github"></i>
+                                    GitHub</a
+                                >
+                                <button
+                                    class="project_description project_link"
+                                >
+                                    <i class="fa-solid fa-info"></i> Description
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="container_img_projets">
+                    <div
+                        class="container_img_projets"
+                        data-description="Description du projet print it..."
+                        data-images="src/images/photo_p5/photo_1_p5.png,src/images/photo_p5/photo_2_p5.png,src/images/photo_p5/photo_3_p5.png"
+                    >
                         <img
-                            src="src/images/photo projet/projet_5.png"
+                            src="src/images/card_projet/projet_5.png"
                             alt="capture du projet pint it"
                         />
                         <div class="project_details">
                             <h3>Projet Pint It</h3>
                             <p>Technologies:JavaScript, HTML, CSS</p>
                             <div class="project_links">
-                                <a href="#" class="project_link">
-                                    <i class="fa-solid fa-link"></i> Site
-                                </a>
-                                <a href="#" class="project_link">
-                                    <i class="fa-brands fa-github"></i> GitHub
-                                </a>
+                                <a href="#" class="project_link"
+                                    ><i class="fa-solid fa-link"></i> Site</a
+                                >
+                                <a href="#" class="project_link"
+                                    ><i class="fa-brands fa-github"></i>
+                                    GitHub</a
+                                >
+                                <button
+                                    class="project_description project_link"
+                                >
+                                    <i class="fa-solid fa-info"></i> Description
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="container_img_projets">
+                    <div
+                        class="container_img_projets"
+                        data-description="Description du projet portfolio sophie bluel..."
+                        data-images="src/images/photo_p6/photo_1_p6.png,src/images/photo_p6/photo_2_p6.png,src/images/photo_p6/photo_3_p6.png"
+                    >
                         <img
-                            src="src/images/photo projet/projet_6.png"
+                            src="src/images/card_projet/projet_6.png"
                             alt="capture du projet Sophie bluel"
                         />
                         <div class="project_details">
                             <h3>Projet Sophie Bluel</h3>
                             <p>Technologies: JavaScript, HTML, CSS</p>
                             <div class="project_links">
-                                <a href="#" class="project_link">
-                                    <i class="fa-solid fa-link"></i> Site
-                                </a>
-                                <a href="#" class="project_link">
-                                    <i class="fa-brands fa-github"></i> GitHub
-                                </a>
+                                <a href="#" class="project_link"
+                                    ><i class="fa-solid fa-link"></i> Site</a
+                                >
+                                <a href="#" class="project_link"
+                                    ><i class="fa-brands fa-github"></i>
+                                    GitHub</a
+                                >
+                                <button
+                                    class="project_description project_link"
+                                >
+                                    <i class="fa-solid fa-info"></i> Description
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="container_img_projets">
+                    <div
+                        class="container_img_projets"
+                        data-description="Description du projet Kasa..."
+                        data-images="src/images/photo_p8/photo_1_p8.png,src/images/photo_p8/photo_2_p8.png,src/images/photo_p8/photo_3_p8.png"
+                    >
                         <img
-                            src="src/images/photo projet/projet8.png"
+                            src="src/images/card_projet/projet8.png"
                             alt="capture du projet kasa"
                         />
                         <div class="project_details">
                             <h3>Projet Kasa</h3>
                             <p>Technologies: React, Sass</p>
                             <div class="project_links">
-                                <a href="#" class="project_link">
-                                    <i class="fa-solid fa-link"></i> Site
-                                </a>
-                                <a href="#" class="project_link">
-                                    <i class="fa-brands fa-github"></i> GitHub
-                                </a>
+                                <a href="#" class="project_link"
+                                    ><i class="fa-solid fa-link"></i> Site</a
+                                >
+                                <a href="#" class="project_link"
+                                    ><i class="fa-brands fa-github"></i>
+                                    GitHub</a
+                                >
+                                <button
+                                    class="project_description project_link"
+                                >
+                                    <i class="fa-solid fa-info"></i> Description
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="container_img_projets">
+                    <div
+                        class="container_img_projets"
+                        data-description="Description du projet Nina Carducci..."
+                        data-images="src/images/photo_p9/photo_1_p9.png,src/images/photo_p9/photo_2_p9.png,src/images/photo_p9/photo_3_p9.png"
+                    >
                         <img
-                            src="src/images/photo projet/projet_9.png"
+                            src="src/images/card_projet/projet_9.png"
                             alt=" capture du projet Nina Carducci"
                         />
                         <div class="project_details">
                             <h3>Projet Nina Carducci</h3>
                             <p>SEO</p>
                             <div class="project_links">
-                                <a href="#" class="project_link">
-                                    <i class="fa-solid fa-link"></i> Site
-                                </a>
-                                <a href="#" class="project_link">
-                                    <i class="fa-brands fa-github"></i> GitHub
-                                </a>
+                                <a href="#" class="project_link"
+                                    ><i class="fa-solid fa-link"></i> Site</a
+                                >
+                                <a href="#" class="project_link"
+                                    ><i class="fa-brands fa-github"></i>
+                                    GitHub</a
+                                >
+                                <button
+                                    class="project_description project_link"
+                                >
+                                    <i class="fa-solid fa-info"></i> Description
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="container_img_projets">
+                    <div
+                        class="container_img_projets"
+                        data-description="Description du projet Argent bank..."
+                        data-images="src/images/photo_p11/photo_1_p11.png,src/images/photo_p11/photo_2_p11.png,src/images/photo_p11/photo_3_p11.png"
+                    >
                         <img
-                            src="src/images/photo projet/projet_11.png"
+                            src="src/images/card_projet/projet_11.png"
                             alt=" capture du projet Argent Bank"
                         />
                         <div class="project_details">
                             <h3>Projet Argent Bank</h3>
                             <p>Technologies: React, ReduxToolkit</p>
                             <div class="project_links">
-                                <a href="#" class="project_link">
-                                    <i class="fa-solid fa-link"></i> Site
-                                </a>
-                                <a href="#" class="project_link">
-                                    <i class="fa-brands fa-github"></i> GitHub
-                                </a>
+                                <a href="#" class="project_link"
+                                    ><i class="fa-solid fa-link"></i> Site</a
+                                >
+                                <a href="#" class="project_link"
+                                    ><i class="fa-brands fa-github"></i>
+                                    GitHub</a
+                                >
+                                <button
+                                    class="project_description project_link"
+                                >
+                                    <i class="fa-solid fa-info"></i> Description
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -279,6 +313,14 @@
                 </p>
             </div>
         </footer>
+        <!-- Modale -->
+        <div id="projectModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="carousel"></div>
+                <p id="modalDescription" class="modal-description"></p>
+            </div>
+        </div>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="src/script.js"></script>
     </body>

@@ -16,14 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Mode nuit et jour
     themeToggle.addEventListener("click", function () {
-        body.classList.toggle("dark-theme");
+        body.classList.toggle("light-theme");
         const icon = themeToggle.querySelector("i");
-        if (body.classList.contains("dark-theme")) {
-            icon.classList.remove("fa-moon");
-            icon.classList.add("fa-sun");
-        } else {
+        if (body.classList.contains("light-theme")) {
             icon.classList.remove("fa-sun");
             icon.classList.add("fa-moon");
+        } else {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
         }
     });
 
@@ -64,4 +64,60 @@ document.addEventListener("DOMContentLoaded", function () {
             navLinks.style.maxHeight = null;
         }
     });
+
+    // Project description modal
+    const descriptionButtons = document.querySelectorAll(
+        ".project_description"
+    );
+    const modal = document.getElementById("projectModal");
+    const closeModal = document.querySelector(".close");
+    const modalDescription = document.getElementById("modalDescription");
+    const carouselContainer = document.querySelector(".carousel");
+
+    descriptionButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+            const projectDetails = this.closest(".container_img_projets");
+            const description = projectDetails.getAttribute("data-description");
+            const imagesAttr = projectDetails.getAttribute("data-images");
+
+            if (description && imagesAttr) {
+                const images = imagesAttr.split(",");
+
+                modalDescription.innerText = description;
+
+                // Clear existing images
+                carouselContainer.innerHTML = "";
+
+                // Add new images
+                images.forEach((src, index) => {
+                    const img = document.createElement("img");
+                    img.src = src.trim();
+                    if (index === 0) img.classList.add("active");
+                    carouselContainer.appendChild(img);
+                });
+
+                modal.classList.add("show");
+            } else {
+                console.error("Description or images not found");
+            }
+        });
+    });
+
+    closeModal.addEventListener("click", function () {
+        modal.classList.remove("show");
+    });
+
+    // Carousel functionality
+    let currentSlide = 0;
+
+    function showNextImage() {
+        const images = document.querySelectorAll(".carousel img");
+        if (images.length > 0) {
+            images[currentSlide].classList.remove("active");
+            currentSlide = (currentSlide + 1) % images.length;
+            images[currentSlide].classList.add("active");
+        }
+    }
+
+    setInterval(showNextImage, 3000);
 });
