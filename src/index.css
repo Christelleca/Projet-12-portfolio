@@ -595,10 +595,8 @@ footer .social_links a:hover {
     }
 
     .home_presentation {
-        flex-direction: unset;
         gap: 0;
-        height: 145vh;
-        align-items: unset;
+        height: 86vh;
     }
 
     .portrait {
@@ -613,6 +611,11 @@ footer .social_links a:hover {
 }
 
 @media (max-width: 375px) {
+    .home_presentation {
+        flex-direction: unset;
+        align-items: unset;
+        height: 126vh;
+    }
     .container_skill,
     .projets {
         padding: 50px 0px;
@@ -623,6 +626,9 @@ footer .social_links a:hover {
     .container_img_projets {
         width: 369px;
         margin: 4px;
+    }
+    .container_img_projets:hover {
+        transform: unset;
     }
 }
 .project_description {
