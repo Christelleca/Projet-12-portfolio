@@ -595,8 +595,10 @@ footer .social_links a:hover {
     }
 
     .home_presentation {
-        flex-direction: column;
+        flex-direction: unset;
         gap: 0;
+        height: 145vh;
+        align-items: unset;
     }
 
     .portrait {
