@@ -377,6 +377,9 @@ body.light-theme .projets {
     background-color: #fff;
 }
 
+.title_section {
+    text-decoration: underline;
+}
 .container_skill {
     border: 2px solid rgb(239, 204, 4);
 }
