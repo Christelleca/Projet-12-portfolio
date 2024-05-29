@@ -1,0 +1,105 @@
+@media (max-width: 840px) {
+    .home_presentation {
+        gap: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .project_details {
+        height: 180px;
+    }
+    .project_links {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        opacity: 1;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 25px;
+    }
+    .header_navbar nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: #161919;
+        border: 2px solid $primary-color;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        z-index: 1;
+        pointer-events: none; /* Prevents interaction when not visible */
+    }
+
+    .header_navbar nav ul.active {
+        max-height: 500px; /* Set this to a value that covers the maximum height of your menu */
+        opacity: 1;
+        pointer-events: auto; /* Allows interaction when visible */
+    }
+
+    .menu_toggle {
+        display: block;
+    }
+
+    .header_navbar nav ul li a {
+        color: $light-color;
+    }
+
+    .header_navbar nav a {
+        color: $light-color;
+        text-decoration: none;
+        padding: 5px;
+    }
+
+    .theme-toggle {
+        display: block;
+        margin: 10px auto;
+    }
+
+    .home_presentation {
+        gap: 0;
+        height: 86vh;
+    }
+
+    .portrait {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .photo_wrapper img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 375px) {
+    .home_presentation {
+        flex-direction: unset;
+        align-items: unset;
+        overflow: unset;
+        height: 126vh;
+    }
+    .welcome_animation {
+        width: 300px;
+    }
+    .welcome_animation h1 {
+        font-size: 21px;
+    }
+    .container_skill,
+    .projets {
+        padding: 50px 0px;
+    }
+    .container_projets {
+        width: 100%;
+    }
+    .container_img_projets {
+        width: 369px;
+        margin: 4px;
+    }
+    .container_img_projets:hover {
+        transform: unset;
+    }
+}

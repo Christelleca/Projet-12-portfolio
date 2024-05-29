@@ -1,0 +1,157 @@
+.header_navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: $secondary-color; /* Mode sombre par défaut */
+    border-bottom: 2px solid $primary-color;
+    @include transition(background-color);
+}
+
+body.light-theme .header_navbar {
+    background-color: #fff;
+}
+
+.header_navbar .logo_animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $primary-color;
+    position: relative;
+    overflow: hidden;
+    animation: rotateLogo 10s linear infinite;
+}
+
+.header_navbar .logo_text {
+    font-size: 2rem;
+    position: absolute;
+    transition: opacity 2s ease;
+}
+
+.header_navbar .logo_text:not(.visible) {
+    opacity: 0;
+}
+
+@keyframes rotateLogo {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.header_navbar nav ul {
+    display: flex;
+}
+
+.header_navbar nav li {
+    margin: 0 15px;
+    list-style: none;
+    cursor: pointer;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.header_navbar nav li:hover {
+    color: $primary-color;
+}
+
+.theme-toggle {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: $light-color;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    width: 71px;
+    @include transition(background-color);
+}
+
+.theme-toggle i {
+    font-size: 1.2rem;
+}
+
+.theme-toggle:before {
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowingbn5 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+@keyframes glowingbn5 {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.theme-toggle:active {
+    color: $dark-color;
+}
+
+.theme-toggle:active:after {
+    background: transparent;
+}
+
+.theme-toggle:hover:before {
+    opacity: 1;
+}
+
+.theme-toggle:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #191919;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.menu_toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: $light-color;
+    font-size: 24px;
+    cursor: pointer;
+    @include transition(transform);
+}
+
+body.light-theme .menu_toggle {
+    color: #333;
+}

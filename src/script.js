@@ -6,13 +6,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const logoTexts = document.querySelectorAll(".logo_text");
     let currentIndex = 0;
 
-    // Animation de rotation des symboles dans le logo
-    setInterval(() => {
-        logoTexts.forEach((text, index) => {
-            text.classList.toggle("visible", index === currentIndex);
-        });
+    // Set the initial visible logo text
+    logoTexts[currentIndex].classList.add("visible");
+
+    // Function to switch the visible logo text
+    function switchLogoText() {
+        // Remove the visible class from the current logo text
+        logoTexts[currentIndex].classList.remove("visible");
+
+        // Update the index to the next logo text
         currentIndex = (currentIndex + 1) % logoTexts.length;
-    }, 10000);
+
+        // Add the visible class to the new logo text
+        logoTexts[currentIndex].classList.add("visible");
+    }
+
+    // Switch the logo text every 10 seconds
+    setInterval(switchLogoText, 10000);
 
     // Mode nuit et jour
     themeToggle.addEventListener("click", function () {
@@ -51,17 +61,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelector(".header_navbar nav ul");
 
     menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
         if (navLinks.classList.contains("active")) {
-            navLinks.style.maxHeight = navLinks.scrollHeight + "px";
-        } else {
+            navLinks.classList.remove("active");
             navLinks.style.maxHeight = "0";
-        }
-    });
-
-    navLinks.addEventListener("transitionend", () => {
-        if (!navLinks.classList.contains("active")) {
-            navLinks.style.maxHeight = null;
+            navLinks.style.opacity = "0";
+            navLinks.style.pointerEvents = "none";
+        } else {
+            navLinks.classList.add("active");
+            navLinks.style.maxHeight = "500px"; // Set this to a value that covers the maximum height of your menu
+            navLinks.style.opacity = "1";
+            navLinks.style.pointerEvents = "auto";
         }
     });
 

@@ -488,7 +488,7 @@ body.light-theme .projets {
 footer {
     background-color: #252323; /* Couleur du footer en mode sombre */
     padding: 20px;
-    text-align: center;
+
     border-top: 2px solid #efcc04;
     transition: background-color 1s ease;
 }
@@ -519,8 +519,8 @@ footer .social_links {
 
 footer .social_links a {
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid #efcc04;
@@ -557,7 +557,7 @@ footer .social_links a:hover {
         font-size: 25px;
     }
     .header_navbar nav ul {
-        display: none;
+        display: flex;
         flex-direction: column;
         position: absolute;
         top: 60px;
@@ -566,13 +566,16 @@ footer .social_links a:hover {
         border: 2px solid #efcc04;
         overflow: hidden;
         max-height: 0;
-        transition: max-height 0.5s ease-in-out;
+        opacity: 0;
+        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
         z-index: 1;
+        pointer-events: none; /* Prevents interaction when not visible */
     }
 
     .header_navbar nav ul.active {
-        display: flex;
-        max-height: 100%;
+        max-height: 500px; /* Set this to a value that covers the maximum height of your menu */
+        opacity: 1;
+        pointer-events: auto; /* Allows interaction when visible */
     }
 
     .menu_toggle {
@@ -614,7 +617,14 @@ footer .social_links a:hover {
     .home_presentation {
         flex-direction: unset;
         align-items: unset;
+        overflow: unset;
         height: 126vh;
+    }
+    .welcome_animation {
+        width: 300px;
+    }
+    .welcome_animation h1 {
+        font-size: 21px;
     }
     .container_skill,
     .projets {
@@ -647,7 +657,9 @@ footer .social_links a:hover {
 
 /* Modale */
 .modal {
-    display: none;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -656,12 +668,11 @@ footer .social_links a:hover {
     height: 100%;
     overflow: auto;
     background-color: rgb(69 68 68 / 56%);
-    transition: opacity 0.3s ease;
-    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .modal.show {
-    display: block;
+    visibility: visible;
     opacity: 1;
 }
 
@@ -680,7 +691,7 @@ footer .social_links a:hover {
     opacity: 0;
 }
 
-.modal-description {
+.modal-content p {
     color: #000;
 }
 
@@ -692,11 +703,11 @@ footer .social_links a:hover {
 .close {
     color: #000;
     float: right;
-    font-size: 28px;
+    font-size: 35px;
     font-weight: bold;
     position: absolute;
-    top: 10px;
-    right: 25px;
+    top: 0px;
+    right: 10px;
     cursor: pointer;
 }
 
