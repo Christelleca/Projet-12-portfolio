@@ -618,7 +618,7 @@ footer .social_links a:hover {
         flex-direction: unset;
         align-items: unset;
         overflow: unset;
-        height: 126vh;
+        height: 100vh;
     }
     .welcome_animation {
         width: 300px;
