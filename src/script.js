@@ -6,22 +6,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const logoTexts = document.querySelectorAll(".logo_text");
     let currentIndex = 0;
 
-    // Set the initial visible logo text
+    // Set initial logo texte
     logoTexts[currentIndex].classList.add("visible");
 
-    // Function to switch the visible logo text
+    // Function pour switch logo texte
     function switchLogoText() {
-        // Remove the visible class from the current logo text
+        // Remove le logo texte visible
         logoTexts[currentIndex].classList.remove("visible");
 
-        // Update the index to the next logo text
+        // Update de l'index logo texte
         currentIndex = (currentIndex + 1) % logoTexts.length;
 
-        // Add the visible class to the new logo text
+        // Add en visible le nouveau logo texte
         logoTexts[currentIndex].classList.add("visible");
     }
 
-    // Switch the logo text every 10 seconds
+    // Switch de logo texte
     setInterval(switchLogoText, 10000);
 
     // Mode nuit et jour
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Smooth scroll to sections
+    // Scroll des sections
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
             navLinks.style.pointerEvents = "none";
         } else {
             navLinks.classList.add("active");
-            navLinks.style.maxHeight = "500px"; // Set this to a value that covers the maximum height of your menu
+            navLinks.style.maxHeight = "500px";
             navLinks.style.opacity = "1";
             navLinks.style.pointerEvents = "auto";
         }
@@ -94,10 +94,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 modalDescription.innerText = description;
 
-                // Clear existing images
+                // suppression image
                 carouselContainer.innerHTML = "";
 
-                // Add new images
+                // nouvelle image
                 images.forEach((src, index) => {
                     const img = document.createElement("img");
                     img.src = src.trim();
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.classList.remove("show");
     });
 
-    // Carousel functionality
+    // Carousel function
     let currentSlide = 0;
 
     function showNextImage() {
