@@ -3,8 +3,6 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>
             Portfolio de Christelle - Développeuse et Intégratrice Web
         </title>
@@ -36,15 +34,7 @@
         />
         <meta
             property="og:image"
-            content="https://christelleca.github.io/Projet-12-portfolio/src/images/portrait.jpg"
-        />
-        <meta
-            property="og:url"
-            content="https://christelleca.github.io/Projet-12-portfolio/"
-        />
-        <meta
-            property="og:image"
-            content="https://christelleca.github.io/Projet-12-portfolio/src/images/portrait.jpg"
+            content="https://christelleca.github.io/Projet-12-portfolio/src/images/portrait.webp"
         />
         <meta
             property="og:url"
@@ -62,7 +52,7 @@
         />
         <meta
             name="twitter:image"
-            content="https://christelleca.github.io/Projet-12-portfolio/src/images/portrait.jpg"
+            content="https://christelleca.github.io/Projet-12-portfolio/src/images/portrait.webp"
         />
 
         <link
@@ -97,19 +87,30 @@
                 </div>
                 <nav>
                     <ul>
-                        <a href="#home"><li>Accueil</li></a>
-                        <a href="#skills"><li>Compétences</li></a>
-                        <a href="#projects"><li>Projets</li></a>
-                        <a href="#contact"><li>Contact</li></a>
-                        <a href="src/cv/cv.pdf" target="_blank"
-                            ><li>CV <i class="fa-regular fa-file"></i></li
-                        ></a>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#skills">Compétences</a></li>
+                        <li><a href="#projects">Projets</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li></li>
+                        <li>
+                            <a
+                                href="src/cv/cv.pdf"
+                                target="_blank"
+                                aria-label="Télécharger le CV en format PDF"
+                                >CV <i class="fa-regular fa-file"></i
+                            ></a>
+                        </li>
                     </ul>
                 </nav>
-                <button id="theme-toggle" class="theme-toggle">
+                <button
+                    id="theme-toggle"
+                    class="theme-toggle"
+                    aria-label="Toggle light and dark theme"
+                >
                     <i class="fas fa-sun"></i>
                     <!-- Icône du mode jour -->
                 </button>
+
                 <button class="menu_toggle">☰</button>
             </div>
         </header>
@@ -118,7 +119,7 @@
                 <div class="portrait animate__animated animate__fadeInLeft">
                     <div class="photo_wrapper">
                         <img
-                            src="src/images/portrait.jpg"
+                            src="src/images/portrait.webp"
                             alt="photo de Christelle"
                         />
                     </div>
@@ -147,33 +148,33 @@
                 <div class="skill_list">
                     <div class="skill_item">
                         <img
-                            src="src/logo/JavaScript-logo.png"
+                            src="src/logo/JavaScript-logo.webp"
                             alt="logo de javascript"
                         />
                     </div>
                     <div class="skill_item">
                         <img
-                            src="src/logo/react_logo.png"
+                            src="src/logo/react_logo.webp"
                             alt="logo de react"
                         />
                     </div>
                     <div class="skill_item">
                         <img
-                            src="src/logo/redux_logo.png"
+                            src="src/logo/redux_logo.webp"
                             alt="logo de redux"
                         />
                     </div>
                     <div class="skill_item">
-                        <img src="src/logo/sass_logo.png" alt="logo de sass" />
+                        <img src="src/logo/sass_logo.webp" alt="logo de sass" />
                     </div>
                     <div class="skill_item">
                         <img
-                            src="src/logo/logo_github.jpg"
+                            src="src/logo/logo_github.webp"
                             alt="logo de github"
                         />
                     </div>
                     <div class="skill_item">
-                        <img src="src/logo/figma.png" alt="logo de figma" />
+                        <img src="src/logo/figma.webp" alt="logo de figma" />
                     </div>
                 </div>
             </section>
@@ -183,10 +184,10 @@
                     <div
                         class="container_img_projets"
                         data-description="Pour la startup Oh My Food, j'ai développé un site mobile-first répertoriant les menus de restaurants gastronomiques à Paris. Le site permet aux clients de composer leur menu à l'avance. J'ai utilisé HTML, SASS et des animations CSS pour garantir une expérience utilisateur fluide et responsive."
-                        data-images="src/images/photo_p4/photo_1_p4.png,src/images/photo_p4/photo_2_p4.png,src/images/photo_p4/photo_3_p4.png"
+                        data-images="src/images/photo_p4/photo_1_p4.webp;Image du projet Oh My Food 1,src/images/photo_p4/photo_2_p4.webp;Image du projet Oh My Food 2,src/images/photo_p4/photo_3_p4.webp;Image du projet Oh My Food 3"
                     >
                         <img
-                            src="src/images/card_projet/projet_4.png"
+                            src="src/images/card_projet/projet_4.webp"
                             alt="capture du projet oh my food"
                         />
                         <div class="project_details">
@@ -217,10 +218,10 @@
                     <div
                         class="container_img_projets"
                         data-description="Pour la petite imprimerie familiale Print It, j'ai dynamisé leur site Internet statique en créant un carrousel interactif. Le carrousel affiche des images avec des animations en CSS et est accompagné de bullet points indiquant l'image en cours. Le projet a été réalisé en utilisant HTML, CSS, JavaScript pour améliorer l'expérience utilisateur et rendre le site plus engageant."
-                        data-images="src/images/photo_p5/photo_1_p5.png,src/images/photo_p5/photo_2_p5.png,src/images/photo_p5/photo_3_p5.png"
+                        data-images="src/images/photo_p5/photo_1_p5.webp;Image du projet Print It 1,src/images/photo_p5/photo_2_p5.webp;Image du projet Print It 2,src/images/photo_p5/photo_3_p5.webp;Image du projet Print It 3"
                     >
                         <img
-                            src="src/images/card_projet/projet_5.png"
+                            src="src/images/card_projet/projet_5.webp"
                             alt="capture du projet pint it"
                         />
                         <div class="project_details">
@@ -251,10 +252,10 @@
                     <div
                         class="container_img_projets"
                         data-description="Pour l'agence ArchiWebos, j'ai développé le portfolio de l'architecte Sophie Bluel. Utilisant HTML, CSS, et JavaScript, j'ai créé la page de présentation des travaux, une page de connexion pour l'administrateur, et une modale pour l'upload de nouveaux médias. Le projet a suivi les designs Figma et a intégré des fonctionnalités dynamiques pour une expérience utilisateur fluide."
-                        data-images="src/images/photo_p6/photo_1_p6.png,src/images/photo_p6/photo_2_p6.png,src/images/photo_p6/photo_3_p6.png"
+                        data-images="src/images/photo_p6/photo_1_p6.webp;Image du projet Sophie Bluel 1,src/images/photo_p6/photo_2_p6.webp;Image du projet Sophie Bluel 2,src/images/photo_p6/photo_3_p6.webp;Image du projet Sophie Bluel 3"
                     >
                         <img
-                            src="src/images/card_projet/projet_6.png"
+                            src="src/images/card_projet/projet_6.webp"
                             alt="capture du projet Sophie bluel"
                         />
                         <div class="project_details">
@@ -279,10 +280,10 @@
                     <div
                         class="container_img_projets"
                         data-description="J'ai contribué à la refonte du site de Kasa en utilisant React et NodeJS. J'ai créé une interface utilisateur responsive à partir de maquettes Figma, intégré des données JSON, et ajouté des animations CSS pour les menus déroulants, assurant une navigation fluide et moderne."
-                        data-images="src/images/photo_p8/photo_1_p8.png,src/images/photo_p8/photo_2_p8.png,src/images/photo_p8/photo_3_p8.png"
+                        data-images="src/images/photo_p8/photo_1_p8.webp;Image du projet Kasa 1,src/images/photo_p8/photo_2_p8.webp;Image du projet Kasa 2,src/images/photo_p8/photo_3_p8.webp;Image du projet Kasa 3"
                     >
                         <img
-                            src="src/images/card_projet/projet_8.png"
+                            src="src/images/card_projet/projet_8.webp"
                             alt="capture du projet kasa"
                         />
                         <div class="project_details">
@@ -307,10 +308,10 @@
                     <div
                         class="container_img_projets"
                         data-description="J'ai optimisé le site de Nina Carducci, une photographe, pour améliorer sa performance et son SEO. Les optimisations incluent la compression d'images, la restructuration du code, et l'ajout de metas pour les réseaux sociaux. J'ai également implémenté le référencement local avec Schema.org et amélioré l'accessibilité. Un rapport détaillant toutes les améliorations a été fourni pour démontrer les gains obtenus."
-                        data-images="src/images/photo_p9/photo_1_p9.png,src/images/photo_p9/photo_2_p9.png,src/images/photo_p9/photo_3_p9.png"
+                        data-images="src/images/photo_p9/photo_1_p9.webp;Image du projet Nina Carducci 1,src/images/photo_p9/photo_2_p9.webp;Image du projet Nina Carducci 2,src/images/photo_p9/photo_3_p9.webp;Image du projet Nina Carducci 3"
                     >
                         <img
-                            src="src/images/card_projet/projet_9.png"
+                            src="src/images/card_projet/projet_9.webp"
                             alt=" capture du projet Nina Carducci"
                         />
                         <div class="project_details">
@@ -341,10 +342,10 @@
                     <div
                         class="container_img_projets"
                         data-description="J'ai développé le tableau de bord des utilisateurs d'Argent Bank en utilisant React et Redux Toolkit. Les utilisateurs peuvent se connecter, gérer leurs profils, et modifier leur pseudonyme. J'ai également proposé des routes API en Swagger pour la gestion des transactions, justifiant chaque endpoint selon les besoins fonctionnels."
-                        data-images="src/images/photo_p11/photo_1_p11.png,src/images/photo_p11/photo_2_p11.png,src/images/photo_p11/photo_3_p11.png"
+                        data-images="src/images/photo_p11/photo_1_p11.webp;Image du projet Argent Bank 1,src/images/photo_p11/photo_2_p11.webp;Image du projet Argent Bank 2,src/images/photo_p11/photo_3_p11.webp;Image du projet Argent Bank 3"
                     >
                         <img
-                            src="src/images/card_projet/projet_11.png"
+                            src="src/images/card_projet/projet_11.webp"
                             alt=" capture du projet Argent Bank"
                         />
                         <div class="project_details">
@@ -370,7 +371,7 @@
             </section>
         </main>
         <footer id="contact">
-            <h2 class="title_section">Contactez moi</h2>
+            <h4 class="title_section">Contactez moi</h4>
             <div class="footer_content">
                 <div class="footer_details">
                     <p>Téléphone: +33 7 68 18 59 96</p>
@@ -380,14 +381,14 @@
                             href="https://github.com/Christelleca"
                             target="_blank"
                         >
-                            <img src="src/logo/logo_github.jpg" alt="GitHub" />
+                            <img src="src/logo/logo_github.webp" alt="GitHub" />
                         </a>
                         <a
                             href="https://www.linkedin.com/in/christelle-charles-alfred-a641b830b/"
                             target="_blank"
                         >
                             <img
-                                src="src/logo/vecteezy_linkedin-logo-png-linkedin-logo-transparent-png-linkedin_23986970.png"
+                                src="src/logo/vecteezy_linkedin-logo-png-linkedin-logo-transparent-png-linkedin_23986970.webp"
                                 alt="LinkedIn"
                             />
                         </a>

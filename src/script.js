@@ -9,22 +9,22 @@ document.addEventListener("DOMContentLoaded", function () {
     // Set initial logo text
     logoTexts[currentIndex].classList.add("visible");
 
-    // Function to switch logo text
+    // Function pour switch logo text
     function switchLogoText() {
-        // Remove visible logo text
+        // Remove le logo text visible
         logoTexts[currentIndex].classList.remove("visible");
 
-        // Update logo text index
+        // Update de l'index logo text
         currentIndex = (currentIndex + 1) % logoTexts.length;
 
-        // Add visible to new logo text
+        // Add en visible le nouveau logo text
         logoTexts[currentIndex].classList.add("visible");
     }
 
-    // Switch logo text
+    // Switch de logo text
     setInterval(switchLogoText, 10000);
 
-    // Day and night mode
+    // Mode nuit et jour
     themeToggle.addEventListener("click", function () {
         body.classList.toggle("light-theme");
         const icon = themeToggle.querySelector("i");
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Scroll to sections
+    // Scroll des sections
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -56,15 +56,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 .scrollIntoView({ behavior: "smooth" });
         });
 
-    // Dropdown menu for tablet
+    // Menu déroulant pour tablette
     const menuToggle = document.querySelector(".menu_toggle");
     const navLinks = document.querySelector(".header_navbar nav ul");
 
     menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
         if (navLinks.classList.contains("active")) {
-            navLinks.classList.remove("active");
+            navLinks.style.maxHeight = navLinks.scrollHeight + "px";
         } else {
-            navLinks.classList.add("active");
+            navLinks.style.maxHeight = "0";
+        }
+    });
+
+    navLinks.addEventListener("transitionend", () => {
+        if (!navLinks.classList.contains("active")) {
+            navLinks.style.maxHeight = null;
         }
     });
 
@@ -88,13 +95,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 modalDescription.innerText = description;
 
-                // Clear existing images
+                // suppression image
                 carouselContainer.innerHTML = "";
 
-                // Add new images
-                images.forEach((src, index) => {
+                // nouvelle image
+                images.forEach((item, index) => {
+                    const [src, alt] = item.split(";");
                     const img = document.createElement("img");
                     img.src = src.trim();
+                    img.alt = alt ? alt.trim() : `Image ${index + 1}`; // Default alt text if not provided
                     if (index === 0) img.classList.add("active");
                     carouselContainer.appendChild(img);
                 });
@@ -110,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.classList.remove("show");
     });
 
-    // Close modal when clicking outside of modal-content
+    // Close modal on click outside of modal-content
     modal.addEventListener("click", function (e) {
         if (e.target === modal) {
             modal.classList.remove("show");
