@@ -6,25 +6,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const logoTexts = document.querySelectorAll(".logo_text");
     let currentIndex = 0;
 
-    // Set initial logo texte
+    // Set initial logo text
     logoTexts[currentIndex].classList.add("visible");
 
-    // Function pour switch logo texte
+    // Function to switch logo text
     function switchLogoText() {
-        // Remove le logo texte visible
+        // Remove visible logo text
         logoTexts[currentIndex].classList.remove("visible");
 
-        // Update de l'index logo texte
+        // Update logo text index
         currentIndex = (currentIndex + 1) % logoTexts.length;
 
-        // Add en visible le nouveau logo texte
+        // Add visible to new logo text
         logoTexts[currentIndex].classList.add("visible");
     }
 
-    // Switch de logo texte
+    // Switch logo text
     setInterval(switchLogoText, 10000);
 
-    // Mode nuit et jour
+    // Day and night mode
     themeToggle.addEventListener("click", function () {
         body.classList.toggle("light-theme");
         const icon = themeToggle.querySelector("i");
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Scroll des sections
+    // Scroll to sections
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -56,21 +56,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 .scrollIntoView({ behavior: "smooth" });
         });
 
-    // Menu déroulant pour tablette
+    // Dropdown menu for tablet
     const menuToggle = document.querySelector(".menu_toggle");
     const navLinks = document.querySelector(".header_navbar nav ul");
 
     menuToggle.addEventListener("click", () => {
         if (navLinks.classList.contains("active")) {
             navLinks.classList.remove("active");
-            navLinks.style.maxHeight = "0";
-            navLinks.style.opacity = "0";
-            navLinks.style.pointerEvents = "none";
         } else {
             navLinks.classList.add("active");
-            navLinks.style.maxHeight = "500px";
-            navLinks.style.opacity = "1";
-            navLinks.style.pointerEvents = "auto";
         }
     });
 
@@ -94,10 +88,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 modalDescription.innerText = description;
 
-                // suppression image
+                // Clear existing images
                 carouselContainer.innerHTML = "";
 
-                // nouvelle image
+                // Add new images
                 images.forEach((src, index) => {
                     const img = document.createElement("img");
                     img.src = src.trim();
@@ -114,6 +108,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     closeModal.addEventListener("click", function () {
         modal.classList.remove("show");
+    });
+
+    // Close modal when clicking outside of modal-content
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            modal.classList.remove("show");
+        }
     });
 
     // Carousel function
